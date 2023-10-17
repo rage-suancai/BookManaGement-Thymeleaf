@@ -19,4 +19,9 @@ public class StudentServiceImpl implements StudentService {
         return studentMapper.getStudentList();
     }
 
+    @Override
+    public void updateStudent(Integer sid, String name, String sex, String grade) {
+        studentMapper.UpdateStudent(sid, name, sex, grade);
+    }
+
 }

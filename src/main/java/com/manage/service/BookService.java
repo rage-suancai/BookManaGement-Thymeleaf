@@ -1,14 +1,20 @@
 package com.manage.service;
 
 import com.manage.entity.Book;
-import com.manage.entity.Borrow;
 
 import java.util.List;
+import java.util.Map;
 
 public interface BookService {
 
-    List<Book> getBookList();
+    Map<Book, Boolean> getBookList();
+
+    List<Book> getActiveBookList();
 
     void returnBook(Integer bid);
+
+    void addBook(String title, String desc, double price);
+
+    void deleteBook(Integer bid);
 
 }

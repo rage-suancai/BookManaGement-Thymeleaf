@@ -39,17 +39,14 @@ public class BorrowController {
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
         model.addAttribute("nickname", user.getUsername());
-        model.addAttribute("book_list", bookService.getBookList());
+        model.addAttribute("book_list", bookService.getActiveBookList());
         model.addAttribute("student_list", studentService.getStudentList());
         return "add-borrow";
 
     }
     @PostMapping("/add-borrow")
     public String addBorrow(Integer sid, Integer bid) {
-
-        System.out.println("sid: " + sid); System.out.println("bid: " + bid);
         borrowService.addBorrow(sid, bid); return "redirect:/borrow";
-
     }
 
     @GetMapping("/return-book")

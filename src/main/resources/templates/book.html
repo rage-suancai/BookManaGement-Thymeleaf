@@ -92,14 +92,14 @@
                                             <tr th:each="book, iterStar : ${book_list}">
                                             <td th:text="'#' + ${book.getBid()}">----</td>
                                             <td th:text="${book.getTitle()}">----</td>
-                                            <td th:text="${book.getContent()}">----</td>
+                                            <td th:text="${book.getDesc()}">----</td>
                                             <td th:text="${'$' + book.getPrice()}">----</td>
                                             <td>
                                                 <label class="mb-0 badge badge-warning" title="" data-original-title="Pending" th:if="${book_list_status.get(iterStar.index)}">借阅中...</label>
                                                 <label class="mb-0 badge badge-success" title="" data-original-title="Pending" th:unless="${book_list_status.get(iterStar.index)}">空闲中...</label>
                                             </td>
                                             <td class="relative">
-                                                <a class="action-btn " onclick="alert('删除成功!')" th:href="'del-book?bid=' + ${book.getBid()}">
+                                                <a class="action-btn " onclick="alert('删除成功!')" th:href="'delete-book?bid=' + ${book.getBid()}">
                                                     <svg class="default-size " viewBox="0 0 341.333 341.333 ">
                                                         <g>
                                                             <g>
